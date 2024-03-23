@@ -29,8 +29,12 @@ header {
 
 .research-info {
     padding: 20px;
+    font-style: italic;
 }
 
+.publications li em {
+    font-style: italic;
+}
 /* h1, h2 {
     color: #003d5b;
 } */
@@ -52,6 +56,4 @@ ul li::before {
     margin-left: -1em; /* Aligns bullets properly with the text outside the list */
 }
 
-.publications li em {
-    font-style: italic;
-}
+
