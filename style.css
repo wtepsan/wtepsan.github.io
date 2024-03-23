@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #005792;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-pic {
+    max-width: 120px;
+    border-radius: 45%;
+}
+
+.research-info {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #003d5b;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
