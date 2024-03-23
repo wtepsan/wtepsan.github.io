@@ -17,30 +17,23 @@
     <section class="research-info">
         <h2>Research Scope: Data Analytics, Machine Learning, Applied Mathematics, and Pure Mathematics</h2>
         <p>My research endeavors span a broad spectrum of areas within mathematics and computer science.</p>
-        <!-- <ul>
-            <li><strong>Data Analytics:</strong> In the realm of data analytics, my work focuses on developing advanced algorithms for processing and analyzing large datasets to uncover meaningful insights. This includes statistical analysis, predictive modeling, and data visualization techniques to support decision-making processes in various industries.</li>
-            <li><strong>Machine Learning:</strong> My research in machine learning explores the design and implementation of algorithms that can learn from and make predictions or decisions based on data. Areas of interest include deep learning, supervised and unsupervised learning, and reinforcement learning, with applications ranging from autonomous systems to personalized recommendations.</li>
-            <li><strong>Applied Mathematics:</strong> The applied mathematics aspect of my research applies mathematical methods and techniques to solve real-world problems. This encompasses a wide range of topics such as optimization, numerical analysis, and differential equations, particularly in contexts such as engineering, physics, and finance.</li>
-            <li><strong>Pure Mathematics:</strong> Within pure mathematics, my focus is on the theoretical foundations of mathematical concepts. This includes areas such as algebra, topology, and number theory. My work seeks to explore and prove theorems that can provide deeper understanding and new perspectives within mathematics itself.</li>
-        </ul> -->
     </section>
 
     <section class="research-info">
-        <h2><button style="background:none;border:none;padding:0;font-size:inherit;" onclick="togglePublications()">▼ Publications </button></h2>
+        <h2><button style="background:none;border:none;padding:0;font-size:inherit;" onclick="togglePublications()">▼ Publications</button></h2>
         <ul id="publicationsList" style="display: block;">
-            <li>&#x25CF Paper I</li> 
+            <li>&#x25CF; Paper I</li>
         </ul>
     </section>
     <script>
     function togglePublications() {
         var list = document.getElementById("publicationsList");
-        var button = document.querySelector("button[onclick='togglePublications()']");
-        if (list.style.display === "none") {
+        if (list.style.display === "block") {
             list.style.display = "none";
-            button.innerHTML = "▶ Publications"; // Change to right triangle when collapsed
+            document.querySelector("button[onclick='togglePublications()']").innerHTML = "▶ Publications"; // Changes to right triangle when collapsed
         } else {
             list.style.display = "block";
-            button.innerHTML = "▼ Publications"; // Change to down triangle when expanded
+            document.querySelector("button[onclick='togglePublications()']").innerHTML = "▼ Publications"; // Changes to down triangle when expanded
         }
     }
     </script>
