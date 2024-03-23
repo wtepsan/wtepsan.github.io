@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worawit Tepsan - Lecturer</title>
+    <title>Worawit Tepsan - Researcher</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container"> 
-        <header>
-            <img src="images/profile.png" alt="Worawit Tepsan" class="profile-pic">
-            <h1>Worawit Tepsan</h1>
-            <p><strong>Email:</strong> <a href="mailto:worawit.tepsan@cmu.ac.th">worawit.tepsan@cmu.ac.th</a></p>
-            <p><strong>Work:</strong> International College of Digital Innovation, Chiang Mai University</p>
-        </header>
-        <section class="research-info">
-            <h2>Research Scope</h2>
-            <ul>
-                <li>&#x25B8 Data Analytics</li>
-                <li>&#x25B8 Machine Learning</li>
-                <li>&#x25B8 Applied Mathematics</li>
-                <li>&#x25B8 Pure Mathematics</li>
-            </ul>
-        </section>
-        <!-- New Section for Publications -->
-        <section class="research-info">
-            <h2>Publications</h2>
-            <ul>
-                <li> Will be update.</em>.</li>
-            </ul>
-        </section>
-    </div>
-    <script src="script.js"></script>
+    <header>
+        <img src="images/profile.png" alt="Worawit Tepsan" class="profile-pic">
+        <h1>Worawit Tepsan</h1>
+        <p><strong>Email:</strong> <a href="mailto:worawit.tepsan@cmu.ac.th">worawit.tepsan@cmu.ac.th</a></p>
+        <p><strong>Work:</strong> International College of Digital Innovation, Chiang Mai University</p>
+    </header>
+    <section class="research-info">
+        <h2>Research Scope: Data Analytics, Machine Learning, Applied Mathematics, and Pure Mathematics</h2>
+        <p>My research endeavors span a broad spectrum of areas within mathematics and computer science.</p>
+        <!-- <ul>
+            <li><strong>Data Analytics:</strong> In the realm of data analytics, my work focuses on developing advanced algorithms for processing and analyzing large datasets to uncover meaningful insights. This includes statistical analysis, predictive modeling, and data visualization techniques to support decision-making processes in various industries.</li>
+            <li><strong>Machine Learning:</strong> My research in machine learning explores the design and implementation of algorithms that can learn from and make predictions or decisions based on data. Areas of interest include deep learning, supervised and unsupervised learning, and reinforcement learning, with applications ranging from autonomous systems to personalized recommendations.</li>
+            <li><strong>Applied Mathematics:</strong> The applied mathematics aspect of my research applies mathematical methods and techniques to solve real-world problems. This encompasses a wide range of topics such as optimization, numerical analysis, and differential equations, particularly in contexts such as engineering, physics, and finance.</li>
+            <li><strong>Pure Mathematics:</strong> Within pure mathematics, my focus is on the theoretical foundations of mathematical concepts. This includes areas such as algebra, topology, and number theory. My work seeks to explore and prove theorems that can provide deeper understanding and new perspectives within mathematics itself.</li>
+        </ul> -->
+    </section>
+
+    <section class="research-info">
+        <h2><button style="background:none;border:none;padding:0;font-size:inherit;" onclick="togglePublications()">▶ Publications </button></h2>
+        <ul id="publicationsList" style="display: none;">
+            <li>&#x25CF Paper I</li> 
+        </ul>
+    </section>
+    <script>
+    function togglePublications() {
+        var list = document.getElementById("publicationsList");
+        var button = document.querySelector("button[onclick='togglePublications()']");
+        if (list.style.display === "none") {
+            list.style.display = "block";
+            button.innerHTML = "▼ Publications"; // Change to down triangle when expanded
+        } else {
+            list.style.display = "none";
+            button.innerHTML = "▶ Publications"; // Change to right triangle when collapsed
+        }
+    }
+    </script>
 </body>
 </html>
-
