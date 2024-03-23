@@ -1,9 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
@@ -22,11 +23,27 @@ header {
     padding: 20px;
 }
 
-h1, h2 {
+/* h1, h2 {
     color: #003d5b;
+} */
+h1, h2 {
+    color: #005A9C; /* A classic, academic blue */
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+}  
+
+ul li::before {
+    content: "\2022";  /* Unicode character for a bullet */
+    color: #005A9C; /* Matching the headings' color */
+    font-weight: bold; /* Makes the bullet bold */
+    display: inline-block; 
+    width: 1em; /* Ensures a space between the bullet and the text */
+    margin-left: -1em; /* Aligns bullets properly with the text outside the list */
+}
+
+.publications li em {
+    font-style: italic;
 }
