@@ -1,57 +1,33 @@
-body {
-    font-family: 'Times New Roman', Arial, sans-serif;
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    color: #333;  
-}
-
-.container {
-    border: 2px solid #005A9C; /* Solid border with the color of your choice */
-    margin: 20px; /* Adds margin around the container */
-    padding: 20px; /* Adds space between the content and the border */
-    box-sizing: border-box; /* Ensures padding does not increase the size of the container beyond what's specified */
+    font-family: 'Lato', Helvetica, sans-serif; /* Secondary font for headings */
 }
 
 header {
-    background-color: #005A9C;
+    background-color: #005792;
     color: #fff;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
 .profile-pic {
-    max-width: 120px;
-    border-radius: 45%;
+    max-width: 150px;
+    border-radius: 50%;
 }
 
 .research-info {
-    padding: 20px;
-    font-style: italic;
+    padding: 0 25px; 
+    color: blue; /* This will apply the browser's default blue */
 }
 
-.publications li em {
-    font-style: italic;
-}
-/* h1, h2 {
-    color: #003d5b;
-} */
 h1, h2 {
-    color: #005A9C; /* A classic, academic blue */
+    color: #003d5b;
+    font-family: 'Lato', Helvetica, sans-serif; /* Secondary font for headings */
 }
 
 ul {
+    color: #003d5b;
     list-style-type: none;
     padding: 0;
-}  
-
-ul li::before {
-    content: "\2022";  /* Unicode character for a bullet */
-    color: #005A9C; /* Matching the headings' color */
-    font-weight: bold; /* Makes the bullet bold */
-    display: inline-block; 
-    width: 1em; /* Ensures a space between the bullet and the text */
-    margin-left: -1em; /* Aligns bullets properly with the text outside the list */
 }
-
-
