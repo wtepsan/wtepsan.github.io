@@ -33,20 +33,6 @@
     </section>
     <script>
     function togglePublications() {
-    var list = document.getElementById("publicationsList");
-    if (list.style.display === "none") {
-        list.style.display = "block";
-    } else {
-        list.style.display = "none";
-        }
-    } 
-
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('Document loaded');
-        // Future interactive JS code can go here
-    });
-
-    function togglePublications() {
         var list = document.getElementById("publicationsList");
         var button = document.querySelector("button[onclick='togglePublications()']");
         if (list.style.display === "none") {
