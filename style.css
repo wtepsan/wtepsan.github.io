@@ -5,6 +5,7 @@ body {
     background-color: #f0f0f0;
     color: #333;
     line-height: 1.6;
+    border: 2px 
 }
 
 .container {
@@ -15,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #005792;
+    background-color: #0000FF;
     color: #fff;
     padding: 20px;
     text-align: center;
