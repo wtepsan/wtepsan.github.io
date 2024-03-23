@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #0000FF;
+    background-color: #005A9C;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -35,7 +35,7 @@ header {
     color: #003d5b;
 } */
 h1, h2 {
-    color: #000000; /* A classic, academic blue */
+    color: #005A9C; /* A classic, academic blue */
 }
 
 ul {
