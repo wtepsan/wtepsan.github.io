@@ -7,6 +7,13 @@ body {
     line-height: 1.6;
 }
 
+.container {
+    border: 2px solid #005A9C; /* Solid border with the color of your choice */
+    margin: 20px; /* Adds margin around the container */
+    padding: 20px; /* Adds space between the content and the border */
+    box-sizing: border-box; /* Ensures padding does not increase the size of the container beyond what's specified */
+}
+
 header {
     background-color: #005792;
     color: #fff;
