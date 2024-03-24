@@ -92,7 +92,7 @@ nav a {
     color: #fff;
     text-decoration: none;
     padding: 7px 15px;
-    border-radius: 5px;
+    border-radius: 1px;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -113,22 +113,21 @@ h2, .container h2, .container h3 {
 
 }
 
-
-
 .container p, .container ul {
     margin-top: 0;
     margin-bottom: 16px;
 }
 
-.projects-list {
-    list-style-type: square;
-    margin-left: 20px;
+.teaching-list {
+    list-style-type: disc;
+    margin-left: 0px;
 }
 
-.teaching-list {
+.project-list {
     list-style-type: square;
-    margin-left: 20px;
+    margin-left: 0px;
 }
+
 
 .toggle-button {
     background: none;
