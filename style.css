@@ -1,33 +1,141 @@
+/* Basic Reset */
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', Helvetica, sans-serif; /* Secondary font for headings */
+    font-family: 'Lato', Helvetica, sans-serif; /* Use Lato as the primary font */
+    line-height: 1.6;
+    color: hsl(0, 0%, 20%);
+    background: #f4f4f4;
 }
 
+section {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Header Styles */
 header {
+    display: flex;
+    flex-direction: column; /* Organizes children vertically */
+    align-items: center; /* Horizontally centers the child content */
+    justify-content: center; /* Vertically centers the child content */
     background-color: #005792;
     color: #fff;
-    padding: 10px;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Profile Info Styles */
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    margin-bottom: 20px; /* Adds space above the nav menu */
+    flex-direction: column; /* Organizes children vertically */
+    align-items: center; /* Horizontally centers the child content */
+    justify-content: center; /* Vertically centers the child content */
+    background-color: #005792;
+    color: #fff;
+    padding: 20px 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.profile-info a, .profile-info a:visited {
+    color: #fff; /* Keeps link color white even after being visited */
+    text-decoration: none; /* Optional: removes underline from links */
 }
 
 .profile-pic {
-    max-width: 150px;
-    border-radius: 50%;
+    width: 100px; /* Adjust the size of the image as needed */
+    height: 100px; /* Adjust the height to maintain aspect ratio */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area, useful if adjusting size */
+    margin-right: 20px; /* Adds some space between the image and the text */
 }
 
-.research-info {
-    padding: 5px 25px; 
-    color: blue; /* This will apply the browser's default blue */
+.profile-text {
+    display: flex;
+    flex-direction: column; /* Stacks the name and email vertically */
+    justify-content: center; /* Centers the text vertically in relation to the image */
 }
 
-h1, h2 {
-    color: #003d5b;
-    font-family: 'Lato', Helvetica, sans-serif; /* Secondary font for headings */
+.profile-text h1, .profile-text p {
+    margin: 0;
 }
 
-ul {
-    color: #003d5b;
-    list-style-type: none;
-    padding-left: 25px;
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav a:hover, nav a:focus {
+    background-color: #cc4100;
+}
+
+/* General Element Styles */
+h1, h2, .container h2, .container h3 {
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.container p, .container ul {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.publications-list, .research-info {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    color: #007bb5;
+    cursor: pointer;
+    font-size: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-info, nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Improved readability for larger screens */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
 }
