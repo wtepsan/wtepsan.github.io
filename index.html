@@ -3,39 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worawit Tepsan - Researcher</title>
+    <title>Worawit Tepsan - Lecturer</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="images/profile.png" alt="Worawit Tepsan" class="profile-pic">
-        <h1>Worawit Tepsan</h1>
-        <p><strong>Email:</strong> <a href="mailto:worawit.tepsan@cmu.ac.th">worawit.tepsan@cmu.ac.th</a></p>
-        <p><strong>Work:</strong> International College of Digital Innovation, Chiang Mai University</p>
+    <header>   
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#publication">Publication</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <section class="research-info">
-        <h2>Research Scope: Data Analytics, Machine Learning, Applied Mathematics, and Pure Mathematics</h2>
-        <p>My research endeavors span a broad spectrum of areas within mathematics and computer science.</p>
-    </section>
+    
+    <div class="profile-info">
+        <img src="images/profile.png" alt="Worawit Tepsan" class="profile-pic">
+        <div class="profile-text">
+            <h1>Worawit Tepsan</h1>
+            <p><strong>Email:</strong> <a href="mailto:worawit.tepsan@cmu.ac.th">worawit.tepsan@cmu.ac.th</a></p>
+        </div>
+    </div>  
 
-    <section class="research-info">
-        <h2><button style="background:none;border:none;padding:0;font-size:inherit;" onclick="togglePublications()">▼ Publications</button></h2>
-        <ul id="publicationsList" style="display: block;">
-            <li>&#x25CF; Paper I</li>
-        </ul>
-    </section>
-    <script>
-    function togglePublications() {
-        var list = document.getElementById("publicationsList");
-        if (list.style.display === "block") {
-            list.style.display = "none";
-            document.querySelector("button[onclick='togglePublications()']").innerHTML = "▶ Publications"; // Changes to right triangle when collapsed
-        } else {
-            list.style.display = "block";
-            document.querySelector("button[onclick='togglePublications()']").innerHTML = "▼ Publications"; // Changes to down triangle when expanded
-        }
-    }
-    </script>
+    <main>
+        <section class="about-info" id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>I'm Worawit Tepsan, serving at the International College of Digital Innovation, Chiang Mai University, with a PhD in Pure Mathematics. Currently, I apply my mathematical expertise to data analytics.</p>
+                
+                <h3>Research Focus</h3>
+                <p>My research bridges mathematics and computer science, focusing on Data Analytics, Machine Learning, and Applied Mathematics.</p>
+
+                <h3>Teaching</h3> 
+                <p>Guided by my love for Pure Math, I delve into the world of DATA through teaching. My journey from a TA at the University of Houston to a faculty member at CMU has seen me cover:</p>
+                <ul>
+                    <li>Calculus</li>
+                    <li>Social Networks</li>
+                    <li>Digital Tools</li>
+                </ul>
+            </div>
+        </section>
+        <!-- <section class="about-info" id="research">
+            <div class="container">
+
+            </div>
+        </section> -->
+
+        <section class="publication-info" id="publication">
+            <div class="container">
+            <h2><button class="toggle-button"> ▶ Publications</button></h2>
+            <ul class="publications-list">
+                <li>TO BE UPDATE</li>
+            </ul>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
