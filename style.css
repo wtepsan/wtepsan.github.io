@@ -20,7 +20,6 @@ main {
     margin: 20px auto;
 }
 
-/* Header Styles */
 header {
     display: flex;
     flex-direction: column; /* Organizes children vertically */
@@ -52,8 +51,20 @@ header {
 }
 
 .profile-info a, .profile-info, a:visited {
-    color: #fff; /* Keeps link color white even after being visited */
+    color: #ffffff; /* Keeps link color white even after being visited */
     text-decoration: none; /* Optional: removes underline from links */
+}
+
+/* .profile-text a:visited {
+    color: blue;
+} */
+
+.profile-text a:link,
+.profile-text a:visited,
+.profile-text a:hover,
+.profile-text a:active {
+  color: #ffffff; /* Keeps the link black */
+  text-decoration: none; /* Optional: Removes the underline from links */
 }
 
 .profile-info a:hover {
@@ -127,7 +138,6 @@ h2, .container h2, .container h3 {
     list-style-type: square;
     margin-left: 0px;
 }
-
 
 .toggle-button {
     background: none;
@@ -215,10 +225,11 @@ nav ul li a {
 .site-footer a:visited,
 .site-footer a:hover,
 .site-footer a:active {
-  color: #fffcfc; /* Keeps the link black */
+  color: #ffffff; /* Keeps the link black */
   text-decoration: none; /* Optional: Removes the underline from links */
 }
 
 .site-footer a:hover {
   text-decoration: underline; /* Optional: Adds underline on hover for better user experience */
 }
+
