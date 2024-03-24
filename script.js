@@ -11,3 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleButton.textContent = isOpen ? '▶ Publications' : '▼ Publications';
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navUL = document.querySelector('nav ul');
+
+    hamburger.addEventListener('click', () => {
+        navUL.style.display = navUL.style.display === 'block' ? 'none' : 'block';
+    });
+}); 
+
