@@ -121,6 +121,48 @@ h1, h2, .container h2, .container h3 {
     font-size: inherit;
 }
 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    nav ul {
+        display: none; /* Hide menu */
+        flex-direction: column; /* Stack menu items vertically */
+    }
+
+    nav ul li {
+        margin: 0; /* Remove margins */
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .profile-info, nav ul {
