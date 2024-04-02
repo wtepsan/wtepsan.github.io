@@ -51,7 +51,7 @@ header {
 }
 
 .profile-info a, .profile-info, a:visited {
-    color: #ffffff; /* Keeps link color white even after being visited */
+    color: #1a00c3; /* Keeps link color white even after being visited */
     text-decoration: none; /* Optional: removes underline from links */
 }
 
