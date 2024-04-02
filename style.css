@@ -139,6 +139,29 @@ h2, .container h2, .container h3 {
     margin-left: 0px;
 }
 
+.publication-info {
+    font-family: 'Lato', Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0 auto; 
+}
+.publication-info h1 {
+    font-size: 36px;
+    color: rgb(0, 0, 107);
+    text-align: left;
+}
+.publication-list {
+    list-style-type: square;
+    margin-left: 0px;
+}
+/* .publication-list li {
+    font-size: 18px;
+}
+.publication-list li strong {
+    list-style-type: square;
+    margin-left: 0px;
+} */
+
+
 .toggle-button {
     background: none;
     border: none;
@@ -233,3 +256,7 @@ nav ul li a {
   text-decoration: underline; /* Optional: Adds underline on hover for better user experience */
 }
 
+.apa-reference {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
