@@ -5,6 +5,8 @@ html, body {
     line-height: 1.6;
     color: hsl(0, 0%, 20%);
     background: #f4f4f4;
+    scroll-behavior: smooth;
+
 }
 
 section {
