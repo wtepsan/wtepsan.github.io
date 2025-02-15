@@ -78,8 +78,6 @@ async function sendTranscriptionToServer(transcript) {
             method: "POST",
             body: formData
         });
- 
-        
 
         if (!response.ok) {
             throw new Error("การตอบสนองของเซิร์ฟเวอร์ไม่ถูกต้อง");  // "Server response was not OK"
