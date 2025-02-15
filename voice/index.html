@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talking Face with Speech Recognition</title>
+    <link rel="stylesheet" href="/statics/style_TH.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Voice Assistant with Talking Face</h1>
+
+        <!-- Face with animated eyes and mouth -->
+        <div class="face">
+            <div class="eyes">
+                <div class="eye left-eye"></div>
+                <div class="eye right-eye"></div>
+            </div>
+            <div class="mouth" id="mouth"></div>
+        </div>
+
+        <!-- Button to start and stop speech recognition -->
+        <button id="toggle-recording">Start Speaking</button>
+
+        <!-- Status messages -->
+        <p id="status">Press start to begin the conversation...</p>
+        <div id="response-output"></div>
+    </div>
+
+    <script src="/statics/scripts_TH.js"></script>
+</body>
+</html>

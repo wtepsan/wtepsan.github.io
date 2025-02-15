@@ -1,0 +1,95 @@
+/* Basic setup */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+/* Face */
+.face {
+    width: 200px;
+    height: 200px;
+    background-color: #ffcc99;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Eyes */
+.eyes {
+    position: absolute;
+    top: 50px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.eye {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid black;
+}
+
+.left-eye::after, .right-eye::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+
+/* Mouth */
+#mouth {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.talking {
+    animation: talking-animation 0.2s infinite alternate;
+}
+
+@keyframes talking-animation {
+    0% {
+        height: 30px;
+    }
+    100% {
+        height: 10px;
+    }
+}
+
+/* Button */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
