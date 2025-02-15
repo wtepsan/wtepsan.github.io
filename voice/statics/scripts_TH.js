@@ -75,10 +75,18 @@ async function sendTranscriptionToServer(transcript) {
     try {
         // const response = await fetch("http://localhost:4000/process_text/", {
         // const response = await fetch("http://202.80.238.234:5555/api/process_text/", {
+        //     method: "POST",
+        //     body: formData
+        // });
         const response = await fetch("https://cors-anywhere.herokuapp.com/http://202.80.238.234:5555/api/process_text/", {  
             method: "POST",
-            body: formData
+            body: formData,
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
         });
+        
+
         if (!response.ok) {
             throw new Error("การตอบสนองของเซิร์ฟเวอร์ไม่ถูกต้อง");  // "Server response was not OK"
         }
