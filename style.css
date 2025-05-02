@@ -91,6 +91,26 @@ header {
     margin: 0;
 }
 
+.profile-links {
+    margin-top: 10px;
+}
+
+.profile-links a {
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.profile-links i {
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.profile-links a:hover i {
+    color: #00aced; /* or choose a highlight color */
+}
+
+
 /* Navigation Styles */
 nav ul {
     list-style: none;
