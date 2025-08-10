@@ -6,27 +6,17 @@
   <title>Follow-up Activity Form — Matthew Chatbot Creation</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Tailwind fine-tuning for a polished light purple theme
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             lavender: {
-              50: "#F5F3FF",
-              100: "#EEE8FF",
-              200: "#E4D9FF",
-              300: "#D3BFFF",
-              400: "#BFA3FF",
-              500: "#A884FF",
-              600: "#8F6AF2",
-              700: "#7756D6",
-              800: "#5F46AD",
-              900: "#4B3788",
+              50: "#F5F3FF", 100: "#EEE8FF", 200: "#E4D9FF", 300: "#D3BFFF",
+              400: "#BFA3FF", 500: "#A884FF", 600: "#8F6AF2", 700: "#7756D6",
+              800: "#5F46AD", 900: "#4B3788",
             },
           },
-          boxShadow: {
-            soft: "0 10px 30px rgba(127, 90, 240, 0.15)",
-          }
+          boxShadow: { soft: "0 10px 30px rgba(127, 90, 240, 0.15)" }
         }
       }
     }
@@ -36,31 +26,23 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body { font-family: "Noto Sans Thai", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
-    /* Smooth step transitions */
     .fade-enter { opacity: 0; transform: translateY(8px); }
     .fade-enter-active { opacity: 1; transform: translateY(0); transition: all 280ms ease; }
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-lavender-50 via-lavender-100 to-lavender-200 text-lavender-900">
   <main class="max-w-3xl mx-auto px-6 py-10 md:py-14">
-    <!-- Header -->
     <header class="mb-8 md:mb-10 text-center">
       <div class="inline-flex items-center gap-2 rounded-full bg-lavender-200/70 px-4 py-2 text-sm font-semibold text-lavender-800 shadow-soft">
-        <span>Follow-up Activity Form</span>
-        <span class="text-lavender-700">•</span>
-        <span>Light Purple</span>
+        <span>Follow-up Activity Form</span><span class="text-lavender-700">•</span><span>Light Purple</span>
       </div>
       <h1 class="mt-5 text-3xl md:text-4xl font-extrabold tracking-tight text-lavender-900">
         Matthew Chatbot Follow Up Form
       </h1>
-      <p class="mt-3 text-lavender-800/90">
-        กรอกข้อมูลทีละข้อ และกดส่ง ระบบจะบันทึกลง Google Sheet ให้ทันที
-      </p>
+      <p class="mt-3 text-lavender-800/90">กรอกข้อมูลทีละข้อ และกดส่ง ระบบจะบันทึกลง Google Sheet ให้ทันที</p>
     </header>
 
-    <!-- Card -->
     <section class="relative bg-lavender-100/80 rounded-2xl p-5 md:p-7 shadow-soft ring-1 ring-lavender-300/60">
-      <!-- Progress -->
       <div class="mb-6">
         <div class="flex items-center justify-between mb-2">
           <span id="progressText" class="text-sm font-semibold text-lavender-800">ขั้นตอน 1/9</span>
@@ -71,9 +53,8 @@
         </div>
       </div>
 
-      <!-- Steps Container -->
       <div id="stepsContainer" class="space-y-6">
-        <!-- Step 0: ชื่ออาจารย์ + ชื่อทีม -->
+        <!-- Step 0 -->
         <div class="step" data-step="0">
           <h2 class="text-xl md:text-2xl font-bold text-lavender-900 mb-1">สวัสดีค่ะอาจารย์</h2>
           <p class="text-lavender-800/90 mb-5">กรอกข้อมูลเบื้องต้นก่อนเริ่มกันเลย</p>
@@ -91,8 +72,7 @@
           </div>
           <div class="mt-6 flex justify-end">
             <button class="nextBtn inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-lavender-700 hover:bg-lavender-800 text-white font-semibold shadow-soft transition">
-              ถัดไป
-              <span aria-hidden="true">→</span>
+              ถัดไป <span aria-hidden="true">→</span>
             </button>
           </div>
         </div>
@@ -147,8 +127,7 @@
 
         <!-- Step 5 -->
         <div class="step hidden" data-step="5">
-          <h2 class="text-xl md:text-2xl font-bold text-lavender-900 mb-1"> ช่วยแชร์ Instruction ของทีมอาจารย์ให้หน่อยค่ะ</h2>
-          <p class="text-lavender-800/90 mb-3"></p>
+          <h2 class="text-xl md:text-2xl font-bold text-lavender-900 mb-1">ช่วยแชร์ Instruction ของทีมอาจารย์ให้หน่อยค่ะ</h2>
           <textarea id="q5" rows="5" placeholder="เช่น พิมพ์ prompt หลัก + อ้างอิงไฟล์ PDF"
                     class="w-full rounded-xl bg-white/60 focus:bg-white border border-lavender-300 focus:border-lavender-600 outline-none px-4 py-3 text-lavender-900 placeholder-lavender-700/50 shadow-sm transition"></textarea>
           <div class="mt-4 flex items-center justify-between">
@@ -181,7 +160,7 @@
           </div>
         </div>
 
-        <!-- Step 8 (Final) -->
+        <!-- Step 8 -->
         <div class="step hidden" data-step="8">
           <h2 class="text-xl md:text-2xl font-bold text-lavender-900 mb-1">เย้! เสร็จแล้ว รู้สึกอย่างไร หรือมีข้อเสนอแนะไหม?</h2>
           <p class="text-lavender-800/90 mb-3">บอกความรู้สึกหรือสิ่งที่อยากให้ปรับปรุง</p>
@@ -190,51 +169,38 @@
           <div class="mt-4 flex items-center justify-between">
             <button class="prevBtn inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/60 hover:bg-white text-lavender-800 font-semibold border border-lavender-300 shadow-sm transition">← ก่อนหน้า</button>
             <button id="submitBtn" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-lavender-700 to-lavender-800 hover:from-lavender-800 hover:to-lavender-900 text-white font-semibold shadow-soft transition">
-              ส่งแบบฟอร์ม
-              <span aria-hidden="true">📮</span>
+              ส่งแบบฟอร์ม <span aria-hidden="true">📮</span>
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer / Helper -->
     <footer class="max-w-3xl mx-auto text-center mt-8 text-sm text-lavender-800/80">
       <p class="mt-1">
-        Google Sheet: 
+        Google Sheet:
         <a class="underline decoration-lavender-600 hover:text-lavender-900" target="_blank" href="https://docs.google.com/spreadsheets/d/1bpMOuW25DIUljCDyRVQyzxYSeZFJeQ3Hqhb3Oq9VUdU/edit?usp=sharing">เปิดสเปรดชีต</a>
       </p>
     </footer>
-
-    <!-- GS Code Viewer (removed for ready-to-use) -->
-    
-
   </main>
 
   <script>
-    // GOOGLE APP SCRIPT JSONP ENDPOINT (Provided)
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbyGdslEn1sUrCDbEPzuaWQjDBdr7mAq-UeuYY0hi8vTjo9tFFCF1jw1femS9L53gPrO/exec";
-
-    // Steps state
+    // Replace with the PUBLIC URL (no `/a/macros/...`)
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbzw94NXqACUGS5lQOqlkLigN0yBvx_U3xtni7dB6p3R07WZovY44njlYlU3rtYJsIp8/exec";
+                    //"https://script.google.com/macros/s/AKfycbxCCG2f-CPcdyXSNuLuXs4YU9sklWsVY2grocUY4cfnoNSkMVwcwwcUpb66C9c_xAaH/exec"
+                    //https://script.google.com/macros/s/AKfycbzw94NXqACUGS5lQOqlkLigN0yBvx_U3xtni7dB6p3R07WZovY44njlYlU3rtYJsIp8/exec
     const steps = Array.from(document.querySelectorAll(".step"));
-    const totalSteps = steps.length; // 9 รวมหน้าข้อมูลผู้สอน + 8 คำถาม
+    const totalSteps = steps.length;
     let current = 0;
 
     const progressText = document.getElementById("progressText");
     const progressLabel = document.getElementById("progressLabel");
     const progressBar = document.getElementById("progressBar");
 
-    // Labels for progress
     const stepLabels = [
-      "ข้อมูลผู้สอน",
-      "วิชา/หัวข้อ",
-      "ความสามารถของบอท",
-      "บุคลิกของบอท",
-      "ประสบการณ์/ปัญหา/ไอเดีย",
-      "วิธีใส่ Instruction",
-      "การตั้งค่าสิทธิ์เข้าถึง",
-      "ได้ตั้งค่าสิทธิ์ให้ใครบ้าง",
-      "ความรู้สึก/ข้อเสนอแนะ"
+      "ข้อมูลผู้สอน","วิชา/หัวข้อ","ความสามารถของบอท","บุคลิกของบอท",
+      "ประสบการณ์/ปัญหา/ไอเดีย","วิธีใส่ Instruction","การตั้งค่าสิทธิ์เข้าถึง",
+      "ได้ตั้งค่าสิทธิ์ให้ใครบ้าง","ความรู้สึก/ข้อเสนอแนะ"
     ];
 
     function updateProgress() {
@@ -248,21 +214,17 @@
       steps.forEach((el) => el.classList.add("hidden"));
       const target = steps[index];
       if (target) {
-        // Small enter animation
         target.classList.remove("hidden");
         target.classList.add("fade-enter");
         requestAnimationFrame(() => {
           target.classList.add("fade-enter-active");
-          setTimeout(() => {
-            target.classList.remove("fade-enter", "fade-enter-active");
-          }, 300);
+          setTimeout(() => target.classList.remove("fade-enter", "fade-enter-active"), 300);
         });
       }
       updateProgress();
     }
 
     function validateStep(idx) {
-      // All fields required
       if (idx === 0) {
         const teacher = document.getElementById("teacherName").value.trim();
         const team = document.getElementById("teamName").value.trim();
@@ -272,7 +234,6 @@
         }
         return true;
       }
-      // For other steps: one textarea per step
       const textarea = document.querySelector(`.step[data-step="${idx}"] textarea`);
       if (!textarea || !textarea.value.trim()) {
         Swal.fire({ icon: "warning", title: "ยังไม่ได้กรอก", text: "กรุณากรอกคำตอบก่อนกดถัดไป" });
@@ -297,11 +258,12 @@
     }
 
     function submitJSONP(payload) {
+      const submitBtn = document.getElementById("submitBtn");
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.classList.add("opacity-70","cursor-not-allowed"); }
+
       Swal.fire({
-        title: "กำลังบันทึก...",
-        text: "โปรดรอสักครู่",
-        allowOutsideClick: false,
-        didOpen: () => Swal.showLoading(),
+        title: "กำลังบันทึก...", text: "โปรดรอสักครู่",
+        allowOutsideClick: false, didOpen: () => Swal.showLoading(),
       });
 
       const cbName = "cb_" + Date.now() + "_" + Math.random().toString(36).slice(2);
@@ -313,11 +275,11 @@
         clearTimeout(timeoutHandle);
         cleanup();
         if (response && (response.ok || response.status === "success")) {
-          Swal.fire({ icon: "success", title: "บันทึกสำเร็จ!", text: "ข้อมูลถูกบันทึกลง Google Sheet แล้ว" }).then(() => {
-            showThankYou();
-          });
+          Swal.fire({ icon: "success", title: "บันทึกสำเร็จ!", text: "ข้อมูลถูกบันทึกลง Google Sheet แล้ว" })
+            .then(() => showThankYou());
         } else {
           Swal.fire({ icon: "error", title: "บันทึกไม่สำเร็จ", text: (response && response.message) ? response.message : "ลองใหม่อีกครั้ง" });
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.classList.remove("opacity-70","cursor-not-allowed"); }
         }
       };
 
@@ -334,17 +296,15 @@
         Swal.fire({
           icon: "error",
           title: "เชื่อมต่อไม่ได้",
-          text: "ตรวจสอบ URL ของ Web App, สถานะการเผยแพร่ (Anyone), และลองใหม่อีกครั้ง"
+          text: "ตรวจสอบ URL ของ Web App (ต้องเป็นแบบ /macros/s/..), และสถานะการเผยแพร่ (Anyone)",
         });
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.classList.remove("opacity-70","cursor-not-allowed"); }
       };
 
       timeoutHandle = setTimeout(() => {
         cleanup();
-        Swal.fire({
-          icon: "error",
-          title: "หมดเวลาเชื่อมต่อ",
-          text: "อาจยังไม่ได้เผยแพร่ Web App หรือ URL ไม่ถูกต้อง"
-        });
+        Swal.fire({ icon: "error", title: "หมดเวลาเชื่อมต่อ", text: "อาจยังไม่ได้เผยแพร่ Web App หรือ URL ไม่ถูกต้อง" });
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.classList.remove("opacity-70","cursor-not-allowed"); }
       }, 15000);
 
       const dataStr = encodeURIComponent(JSON.stringify(payload));
@@ -352,13 +312,6 @@
       document.body.appendChild(script);
     }
 
-    function resetForm() {
-      document.querySelectorAll("input, textarea").forEach(el => el.value = "");
-      current = 0;
-      showStep(current);
-    }
-
-    // Thank you screen
     function showThankYou() {
       document.querySelector("main").innerHTML = `
         <section class="min-h-[70vh] flex items-center justify-center">
@@ -368,57 +321,30 @@
             <p class="mt-2 text-lavender-800/90">ระบบได้รับข้อมูลของอาจารย์เรียบร้อยแล้ว</p>
             <button id="againBtn" class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-lavender-700 hover:bg-lavender-800 text-white font-semibold shadow-soft transition">กรอกอีกครั้ง</button>
           </div>
-        </section>
-      `;
-      document.getElementById("againBtn").addEventListener("click", () => {
-        location.reload();
-      });
+        </section>`;
+      document.getElementById("againBtn").addEventListener("click", () => location.reload());
     }
 
-    // Event bindings: Next buttons
     document.querySelectorAll(".nextBtn").forEach(btn => {
       btn.addEventListener("click", () => {
         if (!validateStep(current)) return;
-        if (current < totalSteps - 1) {
-          current += 1;
-          showStep(current);
-        }
+        if (current < totalSteps - 1) { current += 1; showStep(current); }
       });
     });
 
-    // Event bindings: Previous buttons
     document.querySelectorAll(".prevBtn").forEach(btn => {
       btn.addEventListener("click", () => {
-        if (current > 0) {
-          current -= 1;
-          showStep(current);
-        }
+        if (current > 0) { current -= 1; showStep(current); }
       });
     });
 
-    // Submit button
     document.getElementById("submitBtn").addEventListener("click", () => {
       if (!validateStep(current)) return;
       const data = collectData();
       submitJSONP(data);
     });
 
-    // Copy GS code button
-    document.getElementById("copyGs").addEventListener("click", () => {
-      const ta = document.getElementById("gsCode");
-      ta.select();
-      ta.setSelectionRange(0, 99999);
-      const ok = document.execCommand("copy");
-      Swal.fire({
-        icon: ok ? "success" : "info",
-        title: ok ? "คัดลอกแล้ว" : "คัดลอกไม่ได้",
-        timer: 1400,
-        showConfirmButton: false
-      });
-    });
-
-    // Init
     showStep(current);
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96ce6dc2a6c626e6',t:'MTc1NDgxNzc0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
