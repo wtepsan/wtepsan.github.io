@@ -1,22 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.querySelector('.toggle-button');
-    const publicationsList = document.querySelector('.project-list');
-
-    // Initialize button text based on the list's initial state
-    toggleButton.textContent = '▼ Todo Research Project'; // List is visible by default
-
-    toggleButton.addEventListener('click', () => {
-        const isOpen = publicationsList.style.display === 'block' || publicationsList.style.display === '';
-        publicationsList.style.display = isOpen ? 'none' : 'block';
-        toggleButton.textContent = isOpen ? '▶ Todo Research Project' : '▼ Todo Research Project';
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navUL = document.querySelector('nav ul');
 
-    hamburger.addEventListener('click', () => {
-        navUL.style.display = navUL.style.display === 'block' ? 'none' : 'block';
+    if (hamburger && navUL) {
+        hamburger.addEventListener('click', () => {
+            navUL.classList.toggle('show');
+        });
+    }
+
+    // Close menu when a link is clicked
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navUL.classList.contains('show')) {
+                navUL.classList.remove('show');
+            }
+        });
     });
-}); 
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach((section) => {
+        observer.observe(section);
+    });
+});
