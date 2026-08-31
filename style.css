@@ -198,14 +198,29 @@ nav a:hover, nav a:focus {
 
 .badges-container blockquote {
     margin: 0;
-    padding: 15px;
-    background: var(--bg-main);
-    border-radius: 8px;
+    padding: 20px;
+    background: var(--bg-card);
+    border-radius: 12px;
     border: 1px solid #e2e8f0;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    width: 260px;
 }
 
-.teaching-list, .project-list, .publication-list {
-    padding-left: 20px;
+.badges-container blockquote .badgr-badge-name {
+    flex-grow: 1;
+    margin-top: 15px !important; /* Add space below image */
+}
+
+/* Force override the inline styles from badgr */
+.badges-container blockquote p,
+.badges-container blockquote strong,
+.badges-container blockquote span {
+    text-align: center !important;
+    justify-content: center;
 }
 
 .teaching-list li {
