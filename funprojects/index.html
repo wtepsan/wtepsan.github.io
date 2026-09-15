@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คำราชาศัพท์แสนสนุก</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap">
+<style>
+/* ════════════════════════════════════════════
+   DESIGN TOKENS
+   ════════════════════════════════════════════ */
+:root {
+  --ground:      #FFFBF4;
+  --surface:     #FFFFFF;
+  --surface-alt: #F5EFFF;
+
+  --ink:         #1E0A3C;
+  --ink-muted:   #6B4FA8;
+
+  --royal:       #3B0764;
+  --royal-mid:   #7C3AED;
+  --royal-light: #EDE9FE;
+  --royal-glow:  rgba(124, 58, 237, 0.18);
+
+  --gold:        #92400E;
+  --gold-bg:     #FEF3C7;
+  --gold-btn:    #D97706;
+  --gold-shine:  #FCD34D;
+
+  --ok:     #065F46;
+  --ok-bg:  #D1FAE5;
+  --err:    #7F1D1D;
+  --err-bg: #FEE2E2;
+
+  --r:     20px;
+  --r-sm:  12px;
+  --sh:    0 8px 32px rgba(59, 7, 100, 0.13);
+  --sh-lg: 0 16px 48px rgba(59, 7, 100, 0.20);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:      #0D0618;
+    --surface:     #160B2E;
+    --surface-alt: #1F1040;
+    --ink:         #F0E6FF;
+    --ink-muted:   #C4B5FD;
+    --royal:       #A78BFA;
+    --royal-mid:   #C4B5FD;
+    --royal-light: #2D1B69;
+    --royal-glow:  rgba(167, 139, 250, 0.15);
+    --gold:        #FCD34D;
+    --gold-bg:     #1C1500;
+    --gold-btn:    #F59E0B;
+    --gold-shine:  #FBBF24;
+    --ok:     #6EE7B7;
+    --ok-bg:  #064E3B;
+    --err:    #FCA5A5;
+    --err-bg: #4C0519;
+    --sh:    0 8px 32px rgba(0, 0, 0, 0.5);
+    --sh-lg: 0 16px 48px rgba(0, 0, 0, 0.65);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground:      #0D0618;
+  --surface:     #160B2E;
+  --surface-alt: #1F1040;
+  --ink:         #F0E6FF;
+  --ink-muted:   #C4B5FD;
+  --royal:       #A78BFA;
+  --royal-mid:   #C4B5FD;
+  --royal-light: #2D1B69;
+  --royal-glow:  rgba(167, 139, 250, 0.15);
+  --gold:        #FCD34D;
+  --gold-bg:     #1C1500;
+  --gold-btn:    #F59E0B;
+  --gold-shine:  #FBBF24;
+  --ok:     #6EE7B7;
+  --ok-bg:  #064E3B;
+  --err:    #FCA5A5;
+  --err-bg: #4C0519;
+  --sh:    0 8px 32px rgba(0, 0, 0, 0.5);
+  --sh-lg: 0 16px 48px rgba(0, 0, 0, 0.65);
+}
+
+/* ════════════════════════════════════════════
+   RESET & BASE
+   ════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Prompt', 'Thonburi', 'Leelawadee UI', 'Leelawadee', sans-serif;
+  background: var(--ground);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+button { cursor: pointer; font-family: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* ════════════════════════════════════════════
+   HEADER
+   ════════════════════════════════════════════ */
+.app-header {
+  background: linear-gradient(140deg, #1E0040 0%, #3B0764 45%, #5B21B6 100%);
+  padding-block: 20px;
+  padding-inline: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient( 45deg, rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 1px, transparent 0, transparent 14px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 1px, transparent 0, transparent 14px);
+  pointer-events: none;
+}
+
+.header-inner {
+  max-width: 680px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.crown {
+  font-size: 48px;
+  flex-shrink: 0;
+  line-height: 1;
+  filter: drop-shadow(0 2px 10px rgba(252,211,77,.6));
+}
+
+.app-header h1 {
+  font-size: clamp(20px, 5vw, 30px);
+  font-weight: 800;
+  color: #FEF3C7;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.tagline {
+  font-size: clamp(13px, 3vw, 15px);
+  color: #DDD6FE;
+  margin-top: 3px;
+  font-weight: 400;
+}
+
+/* ════════════════════════════════════════════
+   CONTROL BAR
+   ════════════════════════════════════════════ */
+.control-bar {
+  background: var(--surface);
+  border-bottom: 2px solid var(--royal-light);
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 16px rgba(59, 7, 100, .09);
+}
+
+.cat-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-block: 2px;
+}
+.cat-strip::-webkit-scrollbar { display: none; }
+
+.cat-pill {
+  flex-shrink: 0;
+  padding: 5px 15px;
+  border: 2px solid var(--royal-light);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--royal-mid);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background .18s, color .18s, border-color .18s;
+}
+.cat-pill:hover { background: var(--royal-light); }
+.cat-pill.active {
+  background: var(--royal-mid);
+  color: #fff;
+  border-color: var(--royal-mid);
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 22px;
+  border: 2px solid var(--royal-light);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--royal-mid);
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all .2s;
+}
+.tab-btn:hover { background: var(--royal-light); transform: translateY(-1px); }
+.tab-btn.active {
+  background: linear-gradient(135deg, #3B0764, #7C3AED);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 16px var(--royal-glow);
+  transform: translateY(-2px);
+}
+
+/* ════════════════════════════════════════════
+   MAIN LAYOUT
+   ════════════════════════════════════════════ */
+#app-main {
+  max-width: 680px;
+  margin-inline: auto;
+  padding: 24px 20px 64px;
+}
+
+.mode-panel { display: none; }
+.mode-panel.active { display: block; }
+
+/* ════════════════════════════════════════════
+   PROGRESS
+   ════════════════════════════════════════════ */
+.prog-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.prog-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--royal-mid);
+  white-space: nowrap;
+  letter-spacing: .02em;
+}
+
+.prog-track {
+  flex: 1;
+  min-width: 60px;
+  height: 8px;
+  background: var(--royal-light);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.prog-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #3B0764, #D97706);
+  border-radius: 999px;
+  transition: width .5s cubic-bezier(.4,0,.2,1);
+}
+
+/* ════════════════════════════════════════════
+   FLASHCARD  (Safari-safe 3D flip)
+   ════════════════════════════════════════════ */
+.card-scene {
+  perspective: 1400px;
+  -webkit-perspective: 1400px;
+  margin-bottom: 24px;
+}
+
+.card-3d {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform .6s cubic-bezier(.4,0,.2,1);
+  cursor: pointer;
+  border-radius: var(--r);
+}
+
+.card-3d:focus-visible {
+  outline: 3px solid var(--gold-shine);
+  outline-offset: 4px;
+}
+
+.card-3d.flipped { transform: rotateY(180deg); }
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--r);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 24px;
+  text-align: center;
+  overflow: hidden;
+  /* Safari ignores backface-visibility inside preserve-3d in some builds,
+     showing both faces mirrored on top of each other. The opacity swap
+     fires at mid-rotation (card edge-on) so only one face is ever drawn. */
+  transition: opacity 0s linear .3s;
+}
+
+.card-front { opacity: 1; }
+.card-back  { opacity: 0; transform: rotateY(180deg); }
+.card-3d.flipped .card-front { opacity: 0; }
+.card-3d.flipped .card-back  { opacity: 1; }
+
+/* ── Front: warm amber parchment ── */
+.card-front {
+  background: linear-gradient(148deg, #FFFDF5 0%, #FEF3C7 55%, #FDE68A 100%);
+  border: 2.5px solid #D97706;
+  box-shadow:
+    var(--sh-lg),
+    inset 0 0 0 6px rgba(253, 230, 138, .55),
+    inset 0 0 0 8px rgba(217, 119, 6, .12);
+}
+
+.card-front::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: calc(var(--r) - 2px);
+  background-image:
+    repeating-linear-gradient( 45deg, rgba(217,119,6,.055) 0, rgba(217,119,6,.055) 1px, transparent 0, transparent 14px),
+    repeating-linear-gradient(-45deg, rgba(217,119,6,.055) 0, rgba(217,119,6,.055) 1px, transparent 0, transparent 14px);
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .card-front {
+    background: linear-gradient(148deg, #1C1400 0%, #2D2000 100%);
+    border-color: #92400E;
+    box-shadow: var(--sh-lg), inset 0 0 0 6px rgba(120, 80, 0, .2);
+  }
+}
+:root[data-theme="dark"] .card-front {
+  background: linear-gradient(148deg, #1C1400 0%, #2D2000 100%);
+  border-color: #92400E;
+  box-shadow: var(--sh-lg), inset 0 0 0 6px rgba(120, 80, 0, .2);
+}
+
+/* ── Back: royal plum ── */
+.card-back {
+  background: linear-gradient(148deg, #1E0040 0%, #3B0764 50%, #5B21B6 100%);
+  border: 2.5px solid #7C3AED;
+  box-shadow: var(--sh-lg), inset 0 0 0 6px rgba(255,255,255,.06);
+  color: #fff;
+}
+
+.cat-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  background: #D97706;
+  color: #fff;
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.face-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #92400E;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+.face-eyebrow.light { color: #C4B5FD; }
+
+.face-word {
+  font-size: clamp(44px, 10vw, 68px);
+  font-weight: 800;
+  color: #2E0A5E;
+  line-height: 1.15;
+  position: relative;
+  z-index: 1;
+}
+
+.royal-word {
+  font-size: clamp(28px, 6.5vw, 48px);
+  color: #FCD34D;
+}
+
+.flip-hint {
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #92400E;
+  position: relative;
+  z-index: 1;
+  animation: hintFloat 2.8s ease-in-out infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .face-eyebrow:not(.light) { color: #D97706; }
+  :root:not([data-theme="light"]) .card-front .face-word    { color: #EDE9FE; }
+  :root:not([data-theme="light"]) .flip-hint                { color: #D97706; }
+}
+:root[data-theme="dark"] .face-eyebrow:not(.light) { color: #D97706; }
+:root[data-theme="dark"] .card-front .face-word    { color: #EDE9FE; }
+:root[data-theme="dark"] .flip-hint                { color: #D97706; }
+
+.back-ref   { font-size: 20px; font-weight: 600; color: #C4B5FD; }
+.back-arrow { font-size: 18px; color: #A78BFA; margin-block: 2px; }
+
+.card-hint {
+  font-size: 13px;
+  font-weight: 400;
+  color: #DDD6FE;
+  background: rgba(255,255,255,.1);
+  border-radius: var(--r-sm);
+  padding: 8px 14px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+@keyframes hintFloat {
+  0%, 100% { opacity: .55; transform: translateY(0); }
+  50%      { opacity: 1;   transform: translateY(-3px); }
+}
+
+/* ════════════════════════════════════════════
+   BUTTONS
+   ════════════════════════════════════════════ */
+.btn {
+  padding: 11px 18px;
+  border: 2px solid transparent;
+  border-radius: var(--r-sm);
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform .18s, box-shadow .18s, background .18s;
+}
+
+.btn.ghost {
+  background: var(--surface);
+  border-color: var(--royal-light);
+  color: var(--royal-mid);
+}
+.btn.ghost:hover { background: var(--royal-light); transform: translateY(-2px); }
+
+.btn.gold {
+  background: linear-gradient(135deg, #D97706, #B45309);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(217,119,6,.28);
+}
+.btn.gold:hover { background: linear-gradient(135deg, #B45309, #92400E); transform: translateY(-2px); }
+
+.btn.primary {
+  background: linear-gradient(135deg, #3B0764, #7C3AED);
+  color: #fff;
+  box-shadow: 0 4px 16px var(--royal-glow);
+}
+.btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px var(--royal-glow); }
+
+.btn.lg { font-size: 17px; padding: 14px 32px; }
+
+.card-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ════════════════════════════════════════════
+   GUESS MODE
+   ════════════════════════════════════════════ */
+.score-chip {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-btn);
+  background: var(--gold-bg);
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--gold-shine);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.question-card {
+  background: var(--surface);
+  border: 2.5px solid var(--royal-light);
+  border-radius: var(--r);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: var(--sh);
+  margin-bottom: 20px;
+}
+
+.q-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+}
+
+.q-word {
+  font-size: clamp(48px, 11vw, 76px);
+  font-weight: 800;
+  color: var(--royal);
+  line-height: 1.15;
+}
+
+.choices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.choice-btn {
+  padding: 16px 10px;
+  border: 2.5px solid var(--royal-light);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: clamp(15px, 4vw, 21px);
+  font-weight: 700;
+  min-height: 70px;
+  line-height: 1.3;
+  transition: all .18s;
+}
+
+.choice-btn:hover:not(:disabled) {
+  background: var(--royal-light);
+  border-color: var(--royal-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--royal-glow);
+}
+
+.choice-btn.correct {
+  background: var(--ok-bg);
+  border-color: var(--ok);
+  color: var(--ok);
+  animation: popCorrect .3s ease;
+}
+
+.choice-btn.wrong {
+  background: var(--err-bg);
+  border-color: var(--err);
+  color: var(--err);
+}
+
+.choice-btn:disabled { cursor: default; }
+
+@keyframes popCorrect {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.feedback-panel {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: var(--r-sm);
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+  transition: background .25s;
+}
+.feedback-panel.correct { background: var(--ok-bg);  color: var(--ok); }
+.feedback-panel.wrong   { background: var(--err-bg); color: var(--err); }
+
+.action-row { text-align: center; margin-top: 14px; }
+
+/* ════════════════════════════════════════════
+   MATCH MODE
+   ════════════════════════════════════════════ */
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.match-stat {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--royal-mid);
+}
+
+.match-instr {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  padding: 10px 14px;
+  border: 2px dashed var(--royal-light);
+  border-radius: var(--r-sm);
+  background: var(--surface-alt);
+  margin-bottom: 16px;
+}
+
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.match-btn {
+  padding: 12px 10px;
+  border: 2.5px solid var(--royal-light);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: clamp(14px, 3.5vw, 19px);
+  font-weight: 700;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.3;
+  transition: all .18s;
+}
+
+.match-btn:hover:not(:disabled) {
+  background: var(--royal-light);
+  border-color: var(--royal-mid);
+  transform: translateY(-2px);
+}
+
+.match-btn.selected {
+  background: var(--royal-light);
+  border-color: var(--royal-mid);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, .22);
+}
+
+.match-btn.matched {
+  background: var(--ok-bg);
+  border-color: var(--ok);
+  color: var(--ok);
+  cursor: default;
+  animation: popCorrect .35s ease;
+}
+
+.match-btn.shake { animation: wrongShake .42s ease; }
+
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); background: var(--err-bg); }
+  40%, 80% { transform: translateX( 6px); background: var(--err-bg); }
+}
+
+.match-fb {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: var(--r-sm);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+  transition: background .25s;
+}
+
+/* ════════════════════════════════════════════
+   RESULT
+   ════════════════════════════════════════════ */
+.result-card {
+  background: var(--surface);
+  border: 2.5px solid var(--royal-light);
+  border-radius: var(--r);
+  padding: 48px 28px;
+  text-align: center;
+  box-shadow: var(--sh-lg);
+}
+
+.result-emoji {
+  display: block;
+  font-size: 72px;
+  line-height: 1;
+  margin-bottom: 18px;
+  animation: floatBounce 1.6s ease-in-out infinite;
+}
+
+.result-title {
+  font-size: clamp(28px, 6.5vw, 42px);
+  font-weight: 800;
+  color: var(--royal);
+  margin-bottom: 10px;
+  text-wrap: balance;
+}
+
+.result-score {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.result-fb {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold-btn);
+  margin-bottom: 32px;
+}
+
+.result-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .choices-grid { grid-template-columns: 1fr; }
+  .card-3d { height: 300px; }
+  .face-word  { font-size: clamp(36px, 12vw, 52px); }
+  .royal-word { font-size: clamp(24px, 8vw, 38px); }
+  .card-controls { gap: 6px; }
+  .btn { padding: 10px 12px; font-size: 13px; }
+  .btn.lg { font-size: 15px; padding: 12px 22px; }
+}
+
+@media (max-width: 380px) {
+  .mode-tabs { gap: 4px; }
+  .tab-btn { padding: 8px 12px; font-size: 13px; }
+  .header-inner { gap: 10px; }
+  .crown { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-inner">
+    <span class="crown">👑</span>
+    <div>
+      <h1>คำราชาศัพท์แสนสนุก</h1>
+      <p class="tagline">มาเรียนรู้คำราชาศัพท์ผ่านการ์ดและเกมกันเถอะ!</p>
+    </div>
+  </div>
+</header>
+
+<div class="control-bar">
+  <div class="cat-strip">
+    <button class="cat-pill active" data-cat="all">ทั้งหมด</button>
+    <button class="cat-pill" data-cat="กริยา">🏃 กริยา</button>
+    <button class="cat-pill" data-cat="ร่างกาย">💪 ร่างกาย</button>
+    <button class="cat-pill" data-cat="อาหาร">🍚 อาหาร</button>
+  </div>
+  <div class="mode-tabs">
+    <button class="tab-btn active" data-mode="learn">📚 เรียนรู้</button>
+    <button class="tab-btn" data-mode="guess">🎯 ทายคำ</button>
+    <button class="tab-btn" data-mode="match">🧩 จับคู่</button>
+  </div>
+</div>
+
+<main id="app-main">
+
+  <!-- ── LEARN ── -->
+  <section id="learn-mode" class="mode-panel active">
+    <div class="prog-row">
+      <span class="prog-label" id="learn-prog-label">คำที่ 1 / 15</span>
+      <div class="prog-track"><div class="prog-fill" id="learn-prog-fill"></div></div>
+    </div>
+
+    <div class="card-scene">
+      <div class="card-3d" id="flashcard" tabindex="0" role="button" aria-label="กดเพื่อพลิกการ์ด">
+        <div class="card-face card-front">
+          <span class="cat-badge" id="card-cat">กริยา</span>
+          <p class="face-eyebrow">คำธรรมดา</p>
+          <p class="face-word" id="word-normal">กิน</p>
+          <p class="flip-hint">👆 แตะการ์ดเพื่อดูคำราชาศัพท์</p>
+        </div>
+        <div class="card-face card-back">
+          <p class="face-eyebrow light">คำราชาศัพท์</p>
+          <p class="back-ref" id="back-normal">กิน</p>
+          <p class="back-arrow">↓</p>
+          <p class="face-word royal-word" id="word-royal">เสวย</p>
+          <p class="card-hint" id="card-hint">คำที่ใช้เมื่อพระมหากษัตริย์ทรงรับประทานอาหาร</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-controls">
+      <button class="btn ghost" id="btn-prev">◀ ก่อนหน้า</button>
+      <button class="btn gold"  id="btn-speak">🔊 อ่านคำ</button>
+      <button class="btn gold"  id="btn-shuffle">🔀 สุ่มคำ</button>
+      <button class="btn ghost" id="btn-next">ถัดไป ▶</button>
+    </div>
+  </section>
+
+  <!-- ── GUESS ── -->
+  <section id="guess-mode" class="mode-panel">
+    <div class="prog-row">
+      <span class="prog-label" id="guess-prog-label">คำที่ 1 / 10</span>
+      <span class="score-chip">⭐ <span id="guess-score">0</span> / <span id="guess-of">10</span></span>
+    </div>
+
+    <div class="question-card">
+      <p class="q-eyebrow">คำราชาศัพท์ของคำนี้คืออะไร?</p>
+      <p class="q-word" id="q-word">นอน</p>
+    </div>
+
+    <div class="choices-grid" id="choices-grid"></div>
+    <div class="feedback-panel" id="feedback-panel"></div>
+    <div class="action-row" id="next-wrap" style="display:none">
+      <button class="btn primary lg" id="btn-next-q">คำถัดไป ▶</button>
+    </div>
+  </section>
+
+  <!-- ── MATCH ── -->
+  <section id="match-mode" class="mode-panel">
+    <div class="match-header">
+      <span class="match-stat" id="match-score-stat">⭐ คะแนน: 0</span>
+      <span class="match-stat" id="match-remain-stat">คู่ที่เหลือ: 5</span>
+    </div>
+    <p class="match-instr">เลือกคำธรรมดาทางซ้าย แล้วเลือกคำราชาศัพท์ทางขวา</p>
+    <div class="match-grid" id="match-grid"></div>
+    <div class="match-fb" id="match-fb"></div>
+  </section>
+
+  <!-- ── RESULT ── -->
+  <section id="result-screen" class="mode-panel">
+    <div class="result-card">
+      <span class="result-emoji" id="res-emoji">🏆</span>
+      <h2 class="result-title" id="res-title">ยอดเยี่ยมมาก!</h2>
+      <p class="result-score" id="res-score">คุณตอบถูก 8 จาก 10 ข้อ</p>
+      <p class="result-fb" id="res-fb">เก่งมากเลย!</p>
+      <div class="result-btns">
+        <button class="btn primary lg" id="btn-play-again">🔄 เล่นอีกครั้ง</button>
+        <button class="btn ghost lg"   id="btn-to-learn">📚 ไปหน้าเรียนรู้</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* ════════════════════════════════════════════
+   คำศัพท์ — ครูเพิ่ม / ลบ / แก้ไขได้ที่นี่
+   ════════════════════════════════════════════ */
+const vocabulary = [
+  { normal: "กิน",    royal: "เสวย",                category: "กริยา",   hint: "คำที่ใช้เมื่อพระมหากษัตริย์ทรงรับประทานอาหาร" },
+  { normal: "นอน",   royal: "บรรทม",               category: "กริยา",   hint: "คำที่ใช้เมื่อพระมหากษัตริย์ทรงพักผ่อนหลับ" },
+  { normal: "เดิน",  royal: "เสด็จพระราชดำเนิน",  category: "กริยา",   hint: "คำที่ใช้เมื่อพระมหากษัตริย์ทรงเดินหรือเสด็จไปยังสถานที่ต่าง ๆ" },
+  { normal: "พูด",   royal: "ตรัส",                category: "กริยา",   hint: "คำที่ใช้เมื่อพระมหากษัตริย์ทรงพูด" },
+  { normal: "ดู",    royal: "ทอดพระเนตร",          category: "กริยา",   hint: "คำที่ใช้เมื่อพระมหากษัตริย์ทรงมองดูสิ่งต่าง ๆ" },
+  { normal: "ฟัง",   royal: "ทรงฟัง",              category: "กริยา",   hint: "คำที่ใช้เมื่อพระมหากษัตริย์ทรงรับฟัง" },
+  { normal: "มือ",   royal: "พระหัตถ์",            category: "ร่างกาย", hint: "อวัยวะสำหรับจับสิ่งของของพระมหากษัตริย์" },
+  { normal: "เท้า",  royal: "พระบาท",              category: "ร่างกาย", hint: "อวัยวะสำหรับเดินของพระมหากษัตริย์" },
+  { normal: "ตา",    royal: "พระเนตร",             category: "ร่างกาย", hint: "อวัยวะสำหรับมองของพระมหากษัตริย์" },
+  { normal: "หู",    royal: "พระกรรณ",             category: "ร่างกาย", hint: "อวัยวะสำหรับฟังของพระมหากษัตริย์" },
+  { normal: "จมูก",  royal: "พระนาสิก",            category: "ร่างกาย", hint: "อวัยวะสำหรับดมกลิ่นของพระมหากษัตริย์" },
+  { normal: "ปาก",   royal: "พระโอษฐ์",            category: "ร่างกาย", hint: "อวัยวะสำหรับพูดและรับประทานของพระมหากษัตริย์" },
+  { normal: "หัว",   royal: "พระเศียร",            category: "ร่างกาย", hint: "ส่วนบนสุดของร่างกายพระมหากษัตริย์" },
+  { normal: "ผม",    royal: "พระเกศา",             category: "ร่างกาย", hint: "เส้นผมของพระมหากษัตริย์" },
+  { normal: "อาหาร", royal: "พระกระยาหาร",         category: "อาหาร",  hint: "สิ่งที่พระมหากษัตริย์ทรงเสวยเพื่อให้ร่างกายแข็งแรง" },
+];
+
+/* ── STATE ── */
+let currentCat = "all", currentMode = "learn", filtered = [...vocabulary];
+let learnOrder = [], learnIdx = 0, isFlipped = false;
+
+const QUIZ_MAX = 10;
+let guessQ = [], guessIdx = 0, guessScore = 0;
+
+const MATCH_MAX = 5;
+let matchPairs = [], matchScore = 0, matchedCount = 0;
+let selLeft = null, selRight = null, lastMode = "guess";
+
+/* ── UTILITIES ── */
+const $ = id => document.getElementById(id);
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function getFiltered() {
+  return currentCat === "all" ? [...vocabulary] : vocabulary.filter(v => v.category === currentCat);
+}
+
+function showPanel(id) {
+  document.querySelectorAll('.mode-panel').forEach(p => p.classList.remove('active'));
+  $(id).classList.add('active');
+}
+
+function speakThai(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'th-TH';
+  u.rate = 0.85;
+  window.speechSynthesis.speak(u);
+}
+
+function resetMode() {
+  if      (currentMode === 'learn') initLearn();
+  else if (currentMode === 'guess') initGuess();
+  else if (currentMode === 'match') initMatch();
+}
+
+/* ── CATEGORY FILTER ── */
+document.querySelectorAll('.cat-pill').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentCat = btn.dataset.cat;
+    filtered = getFiltered();
+    if (currentMode === 'learn' || currentMode === 'guess' || currentMode === 'match') {
+      showPanel(currentMode + '-mode');
+    }
+    resetMode();
+  });
+});
+
+/* ── MODE TABS ── */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentMode = btn.dataset.mode;
+    filtered = getFiltered();
+    showPanel(currentMode + '-mode');
+    resetMode();
+  });
+});
+
+/* ════════════════════════════════════════════
+   LEARN MODE
+   ════════════════════════════════════════════ */
+function initLearn() {
+  filtered   = getFiltered();
+  learnOrder = filtered.map((_, i) => i);
+  learnIdx   = 0;
+  renderCard();
+}
+
+function renderCard() {
+  $('flashcard').classList.remove('flipped');
+  isFlipped = false;
+
+  if (!filtered.length) {
+    $('word-normal').textContent = 'ไม่มีคำในหมวดนี้';
+    $('learn-prog-label').textContent = '0 / 0';
+    $('learn-prog-fill').style.width = '0%';
+    return;
+  }
+
+  const item = filtered[learnOrder[learnIdx]];
+  const total = filtered.length;
+
+  $('card-cat').textContent    = item.category;
+  $('word-normal').textContent = item.normal;
+  $('back-normal').textContent = item.normal;
+  $('word-royal').textContent  = item.royal;
+  $('card-hint').textContent   = item.hint;
+
+  $('learn-prog-label').textContent = `คำที่ ${learnIdx + 1} / ${total}`;
+  $('learn-prog-fill').style.width  = `${((learnIdx + 1) / total) * 100}%`;
+}
+
+$('flashcard').addEventListener('click', () => {
+  isFlipped = !isFlipped;
+  $('flashcard').classList.toggle('flipped', isFlipped);
+});
+
+$('flashcard').addEventListener('keydown', e => {
+  if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); $('flashcard').click(); }
+});
+
+$('btn-prev').addEventListener('click', () => {
+  if (!filtered.length) return;
+  learnIdx = (learnIdx - 1 + filtered.length) % filtered.length;
+  renderCard();
+});
+
+$('btn-next').addEventListener('click', () => {
+  if (!filtered.length) return;
+  learnIdx = (learnIdx + 1) % filtered.length;
+  renderCard();
+});
+
+$('btn-shuffle').addEventListener('click', () => {
+  if (!filtered.length) return;
+  learnOrder = shuffle(learnOrder);
+  learnIdx = 0;
+  renderCard();
+});
+
+$('btn-speak').addEventListener('click', () => {
+  if (!filtered.length) return;
+  const item = filtered[learnOrder[learnIdx]];
+  speakThai(isFlipped ? `${item.normal} คือ ${item.royal}` : item.normal);
+});
+
+document.addEventListener('keydown', e => {
+  if (currentMode !== 'learn') return;
+  if      (e.key === 'ArrowLeft')  $('btn-prev').click();
+  else if (e.key === 'ArrowRight') $('btn-next').click();
+});
+
+/* ════════════════════════════════════════════
+   GUESS MODE
+   ════════════════════════════════════════════ */
+function initGuess() {
+  filtered = getFiltered();
+  const pool = filtered.length >= 2 ? filtered : vocabulary;
+
+  guessQ     = shuffle(pool).slice(0, Math.min(QUIZ_MAX, pool.length));
+  guessIdx   = 0;
+  guessScore = 0;
+
+  $('guess-score').textContent    = '0';
+  $('guess-of').textContent       = guessQ.length;
+  $('feedback-panel').textContent = '';
+  $('feedback-panel').className   = 'feedback-panel';
+  $('next-wrap').style.display    = 'none';
+
+  renderGuessQ();
+}
+
+function renderGuessQ() {
+  if (guessIdx >= guessQ.length) { showResult('guess'); return; }
+
+  const q = guessQ[guessIdx];
+  $('q-word').textContent           = q.normal;
+  $('guess-prog-label').textContent = `คำที่ ${guessIdx + 1} / ${guessQ.length}`;
+  $('feedback-panel').textContent   = '';
+  $('feedback-panel').className     = 'feedback-panel';
+  $('next-wrap').style.display      = 'none';
+
+  // ตัวลวงดึงจากคำศัพท์ทั้งหมด เพื่อให้มีตัวเลือกครบ 4 เสมอ
+  const wrongs  = shuffle(vocabulary.filter(v => v.royal !== q.royal)).slice(0, 3).map(v => v.royal);
+  const choices = shuffle([q.royal, ...wrongs]);
+
+  const grid = $('choices-grid');
+  grid.innerHTML = '';
+  choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className   = 'choice-btn';
+    btn.textContent = choice;
+    btn.addEventListener('click', () => onGuessChoice(choice, q, btn));
+    grid.appendChild(btn);
+  });
+}
+
+function onGuessChoice(choice, q, clicked) {
+  document.querySelectorAll('.choice-btn').forEach(b => { b.disabled = true; });
+  const fb = $('feedback-panel');
+
+  if (choice === q.royal) {
+    clicked.classList.add('correct');
+    guessScore++;
+    $('guess-score').textContent = guessScore;
+    fb.textContent = `✅ เก่งมาก! "${q.royal}" คือคำราชาศัพท์ของ "${q.normal}"`;
+    fb.className   = 'feedback-panel correct';
+    speakThai('เก่งมาก');
+  } else {
+    clicked.classList.add('wrong');
+    document.querySelectorAll('.choice-btn').forEach(b => {
+      if (b.textContent === q.royal) b.classList.add('correct');
+    });
+    fb.textContent = `❌ คำตอบที่ถูกต้องคือ "${q.royal}" — ลองใหม่ได้นะ`;
+    fb.className   = 'feedback-panel wrong';
+  }
+
+  guessIdx++;
+  if (guessIdx < guessQ.length) $('next-wrap').style.display = 'block';
+  else setTimeout(() => showResult('guess'), 1700);
+}
+
+$('btn-next-q').addEventListener('click', renderGuessQ);
+
+/* ════════════════════════════════════════════
+   MATCH MODE
+   ════════════════════════════════════════════ */
+function initMatch() {
+  filtered = getFiltered();
+  const pool = filtered.length >= 2 ? filtered : vocabulary;
+
+  matchPairs   = shuffle(pool).slice(0, Math.min(MATCH_MAX, pool.length));
+  matchScore   = 0;
+  matchedCount = 0;
+  selLeft = selRight = null;
+
+  $('match-score-stat').textContent  = '⭐ คะแนน: 0';
+  $('match-remain-stat').textContent = `คู่ที่เหลือ: ${matchPairs.length}`;
+  clearMatchFb();
+  buildMatchGrid();
+}
+
+function buildMatchGrid() {
+  const grid = $('match-grid');
+  grid.innerHTML = '';
+
+  const lefts  = matchPairs.map((p, i) => ({ id: i, text: p.normal }));
+  const rights = shuffle(matchPairs.map((p, i) => ({ id: i, text: p.royal })));
+
+  lefts.forEach((left, i) => {
+    grid.appendChild(makeMatchBtn(left.text,     left.id,     'left'));
+    grid.appendChild(makeMatchBtn(rights[i].text, rights[i].id, 'right'));
+  });
+}
+
+function makeMatchBtn(text, id, side) {
+  const btn = document.createElement('button');
+  btn.className    = 'match-btn';
+  btn.textContent  = text;
+  btn.dataset.id   = id;
+  btn.dataset.side = side;
+  btn.addEventListener('click', () => onMatchClick(btn, Number(btn.dataset.id), side));
+  return btn;
+}
+
+function onMatchClick(btn, id, side) {
+  if (btn.classList.contains('matched')) return;
+
+  document.querySelectorAll(`.match-btn[data-side="${side}"]`).forEach(b => {
+    if (!b.classList.contains('matched')) b.classList.remove('selected');
+  });
+  btn.classList.add('selected');
+
+  if (side === 'left') selLeft = { btn, id };
+  else                 selRight = { btn, id };
+
+  if (selLeft && selRight) checkMatch();
+}
+
+function checkMatch() {
+  const { btn: lb, id: lid } = selLeft;
+  const { btn: rb, id: rid } = selRight;
+
+  if (lid === rid) {
+    [lb, rb].forEach(b => {
+      b.classList.remove('selected');
+      b.classList.add('matched');
+      b.disabled = true;
+    });
+
+    matchScore += 10;
+    matchedCount++;
+
+    $('match-score-stat').textContent  = `⭐ คะแนน: ${matchScore}`;
+    $('match-remain-stat').textContent = `คู่ที่เหลือ: ${matchPairs.length - matchedCount}`;
+
+    showMatchFb(`✅ ถูกต้อง! "${matchPairs[lid].normal}" = "${matchPairs[lid].royal}"`, true);
+    speakThai('ถูกต้อง');
+
+    if (matchedCount === matchPairs.length) setTimeout(() => showResult('match'), 1200);
+  } else {
+    [lb, rb].forEach(b => { void b.offsetWidth; b.classList.add('shake'); });
+    showMatchFb('❌ ไม่ตรงกัน — ลองใหม่นะ', false);
+    setTimeout(() => {
+      [lb, rb].forEach(b => b.classList.remove('shake', 'selected'));
+    }, 480);
+  }
+
+  selLeft = selRight = null;
+}
+
+let fbTimer = null;
+function showMatchFb(msg, ok) {
+  const el = $('match-fb');
+  el.textContent      = msg;
+  el.style.background = ok ? 'var(--ok-bg)' : 'var(--err-bg)';
+  el.style.color      = ok ? 'var(--ok)'    : 'var(--err)';
+  clearTimeout(fbTimer);
+  fbTimer = setTimeout(clearMatchFb, 2600);
+}
+
+function clearMatchFb() {
+  const el = $('match-fb');
+  el.textContent      = '';
+  el.style.background = 'transparent';
+}
+
+/* ════════════════════════════════════════════
+   RESULT
+   ════════════════════════════════════════════ */
+function showResult(mode) {
+  lastMode = mode;
+  showPanel('result-screen');
+
+  const isMatch = mode === 'match';
+  const score   = isMatch ? matchedCount : guessScore;
+  const total   = isMatch ? matchPairs.length : guessQ.length;
+  const pct     = total > 0 ? (score / total) * 100 : 0;
+
+  let emoji, title, fb;
+  if      (pct >= 90) { emoji = '🏆'; title = 'ยอดเยี่ยมมาก!'; fb = 'คุณเก่งมากเลย เรียนรู้ได้ดีมาก!'; }
+  else if (pct >= 70) { emoji = '⭐'; title = 'เก่งมาก!';      fb = 'เกือบแล้ว! อีกนิดเดียวก็สมบูรณ์แบบ'; }
+  else                { emoji = '💪'; title = 'สู้ต่อไปนะ!';   fb = 'ลองทบทวน Flashcard แล้วเล่นอีกครั้งนะ'; }
+
+  $('res-emoji').textContent = emoji;
+  $('res-title').textContent = title;
+  $('res-score').textContent = isMatch
+    ? `คุณจับคู่ถูก ${score} จาก ${total} คู่`
+    : `คุณตอบถูก ${score} จาก ${total} ข้อ`;
+  $('res-fb').textContent = fb;
+
+  speakThai(title);
+}
+
+$('btn-play-again').addEventListener('click', () => {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.tab-btn[data-mode="${lastMode}"]`).classList.add('active');
+  currentMode = lastMode;
+  showPanel(lastMode + '-mode');
+  filtered = getFiltered();
+  if (lastMode === 'guess') initGuess();
+  else                      initMatch();
+});
+
+$('btn-to-learn').addEventListener('click', () => {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.tab-btn[data-mode="learn"]').classList.add('active');
+  currentMode = 'learn';
+  showPanel('learn-mode');
+  initLearn();
+});
+
+/* ── INIT ── */
+initLearn();
+</script>
+
+</body>
+</html>
